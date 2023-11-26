@@ -2,12 +2,14 @@
     background-color: green;
     color: white;
     font-size: 150%;
-    margin-bottom: 5%;
+    margin-bottom: 0.5%;
 }
 
 td {
-    width: 20px;
-    height: 20px;
     border: 1px solid black;
     cursor: pointer;
+}
+
+#minaCasella {
+    font-size: 150%;
 }
