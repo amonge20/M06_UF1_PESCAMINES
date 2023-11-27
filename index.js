@@ -1,10 +1,10 @@
-// EL PESCAMINES EL JOC
-// VARIABLES
+//EL PESCAMINES EL JOC
+//VARIABLES
 let files = 0;
 let columnes = 0;
 let taullel = [];
 let taullelInfo = [];
-// FUNCIO EN LA QUE ES COMENÇA LA PARTIDA
+//FUNCIO EN LA QUE ES COMENÇA LA PARTIDA
 function iniciarPartida() {
     files = parseInt(prompt("Numero de files (No pot ser menys de 10 o més de 30): "));
     columnes = parseInt(prompt("Numero de columnes (No pot ser menys de 10 o més de 30): "));
@@ -14,7 +14,7 @@ function iniciarPartida() {
 
     crearTaullel();
 }
-// FUNCIO PER CREAR EL TAULELL (SENSE UTILITZAR EL )
+//FUNCIO PER CREAR EL TAULELL (SENSE UTILITZAR EL DOM)
 function crearTaullel() {
     taullel = document.getElementById("taullel");
     let taullelHTML = "<table border='1'>";
@@ -42,7 +42,7 @@ function crearTaullel() {
     calculaAdjancents();
 }
 
-// FUNCIO PER LES MINES
+//FUNCIO PER LES MINES
 function setMines() {
     const casellesMines = files * columnes;
     const minesPercent = Math.floor(casellesMines * 0.17);
@@ -55,7 +55,7 @@ function setMines() {
         taullelInfo[minesAleatories].mina = true;
     }
 }
-// FUNCIO PER A CALCULAR DE FORMA CORRECTAMENT LES POSICIONS DE LES MINES
+//FUNCIO PER A CALCULAR DE FORMA CORRECTAMENT LES POSICIONS DE LES MINES
 function calculaAdjancents() {
     for (let i = 0; i < files; i++) {
         for (let j = 0; j < columnes; j++) {
@@ -87,12 +87,11 @@ function calculaAdjancents() {
         }
     }
 }
-// FUNCIO PER A SITUAR LES CASELLES DE LES MINES
+//FUNCIO PER A SITUAR LES CASELLES DE LES MINES
 function esMina(x, y) {
     return taullelInfo[x * columnes + y].mina;
 }
-
-// FUNCIO PER A CALCULAR DE FORMA CORRECTAMENT LES POSICIONS DE LES MINES
+//FUNCIO PER A CALCULAR DE FORMA CORRECTAMENT LES POSICIONS DE LES MINES
 function setMinesAdjacents(x, y, nMinesCalculadas) {
     const cell = taullelInfo[x * columnes + y];
     if (cell) {
